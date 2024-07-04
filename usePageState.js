@@ -9,5 +9,5 @@ export const usePageState = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  return {activeTab, isPending, emailSubmitted, ref,isInView}
+  return {activeTab, isPending, emailSubmitted, ref,isInView ,startTransition,setActiveTab,setEmailSubmitted}
 };

@@ -213,7 +213,7 @@ const About = () => {
   };
   return (
     <>
-      <section className="text-white">
+      <section className="text-white mt-28 px-2">
         <motion.div
           ref={ref}
           variants={variants}
@@ -230,7 +230,7 @@ const About = () => {
           />
           <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
             <h2 className="text-4xl font-bold text-white mb-8">About Me</h2>
-            <p className="text-base lg:text-lg  text-left">
+            <p className="text-base lg:text-lg text-[#ABD7BE] text-left leading-relaxed">
               {" "}
               Hi, I am a Front End Developer with a passion for learning new
               things in technology. My main interest lies in Full Stack Web

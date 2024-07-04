@@ -8,25 +8,24 @@ export default function Home() {
   const resume = "/resume.pdf";
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-12 sm:pb-4 md:pb-20 min-h-screen md:ml-14 ">
+    <div className="flex gap-10 justify-between items-center flex-col-reverse sm:pb-4 md:pb-20 min-h-screen md:ml-14 mt-20 md:flex-row md:pr-16 ">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="col-span-7 place-self-center text-center sm:text-left"
+        className="place-self-center text-center sm:text-left mt-8 px-8 md:px-10"
       >
-        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
+        <h1 className="text-left text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-600">
             Hello, I&apos;m{" "}
           </span>
           <br />
           <TypeAnimation
             sequence={[
-              // Same substring at the start will only be typed out once, initially
               "Suvankar",
               1000,
               "Front-End Developer",
-              1000, // wait 1s before replacing "Mice" with "Hamsters"
+              1000,
               "Problem Solver",
               1000,
               "Quick Learner",
@@ -37,7 +36,7 @@ export default function Home() {
             repeat={Infinity}
           />
         </h1>
-        <p className="text-[#ABD7BE] mb-6 text-base sm:text-lg lg:text-xl text-left md:text-left tracking-wide">
+        <p className="text-[#ABD7BE] mb-6 text-lg leading-recl sm:text-lg lg:text-lg md:text-left tracking-wide text-left">
           I am a learning front-end developer with a strong foundation in
           programming and algorithmic problem-solving. I have a deep passion for
           exploring various tools and frameworks in the world of web development
@@ -46,28 +45,29 @@ export default function Home() {
         </p>
         <div>
           <button className="px-6 py-3 rounded-full mr-4 w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white">
-            <a href={resume} download="suvankarResume">
+            <a
+              href="https://drive.google.com/uc?export=download&id=1BaabPfmQLQ4IdaHtCcvkMg61JLLypWIX"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
               Download CV
             </a>
           </button>
-          {/* <button className="px-1 py-1 rounded-full mr-4 bg-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 w-full sm:w-fit mt-3 ">
-                  <span className="block bg-[#121212] rounded-full hover:bg-slate-800 px-5 py-2">
-                    Download CV
-                  </span>
-                </button> */}
         </div>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="col-span-5 place-self-center mt-10 lg:mt-0"
+        className="place-self-center mt-10 lg:mt-0 md:mr-10"
       >
-        <div className="rounded-full bg-[#181818] w-[280px] h-[280px] lg:w-[300px] lg:h-[300px] relative sm:mb-4 md:mb-10 hidden sm:block">
+        <div className="rounded-full bg-[#181818] w-[280px] h-[280px] lg:w-[300px] lg:h-[300px] relative flex justify-center items-center">
           <Image
             src="/images/dark_anime.jpg"
             alt="hero image"
-            className=" rounded-full absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            className="rounded-full"
+            layout="intrinsic"
             width={450}
             height={450}
           />
