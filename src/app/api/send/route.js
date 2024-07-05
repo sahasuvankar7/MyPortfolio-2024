@@ -13,8 +13,8 @@ export async function POST(req) {
   });
 
   const mailOptions = {
-    from: process.env.GMAIL_USERNAME,
-    to: email,
+    from: email,
+    to: process.env.GMAIL_USERNAME,
     subject: subject,
     text: message,
   };
