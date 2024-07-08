@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req) {
   const { email, subject, message } = await req.json();
+  console.log(email);
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -13,10 +14,10 @@ export async function POST(req) {
   });
 
   const mailOptions = {
-    from: email,
+    from: email, // Set this to your own email address
     to: process.env.GMAIL_USERNAME,
     subject: subject,
-    text: message,
+    text: `From: ${email}\n\n${message}`, // Include the sender's email in the message body
   };
 
   try {
